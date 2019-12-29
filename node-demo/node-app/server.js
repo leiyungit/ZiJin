@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 // mongoose.connect(db)
 //         .then(()=>console.log("MongoDB 连接成功"))
 //         .catch((err)=> console.log(err));
+//mongoose.Promise = global.Promise;  
 mongoose.connect(db,{useNewUrlParser:true},(err)=>{
      if(err){
           console.log('Connection Error:'+err) 
