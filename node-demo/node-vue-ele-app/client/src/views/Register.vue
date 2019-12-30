@@ -2,7 +2,7 @@
     <div class="register">
         <section class="form_container">
             <div class="manage_tip">
-                <span class="title">米修在线后台管理系统</span>
+                <span class="title">后台管理系统</span>
             </div>
             <el-form :model="registerUser" :rules="rules" class="registerForm" ref="registerForm" label-width="80px">
                 <el-form-item label="用户名" prop="name">
@@ -84,16 +84,17 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          this.$axios
-            .post("/api/users/register", this.registerUser)
-            .then(res => {
-              // 注册成功
-              this.$message({
-                message: "注册成功！",
-                type: "success"
-              });
-              // this.$router.push("/login");
-            });
+          console.log("submit!!");
+          // this.$axios
+          //   .post("/api/users/register", this.registerUser)
+          //   .then(res => {
+          //     // 注册成功
+          //     this.$message({
+          //       message: "注册成功！",
+          //       type: "success"
+          //     });
+          //     // this.$router.push("/login");
+          //   });
         } else {
           console.log("error submit!!");
           return false;
