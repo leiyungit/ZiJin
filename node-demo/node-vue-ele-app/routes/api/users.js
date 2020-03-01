@@ -30,15 +30,15 @@ router.post("/register", (req, res) => {
             if (user) {
                 return res.status(400).json("邮箱已被注册！"+req.body.email)
             } else {
-                // let avatar = gravatar.url(req.body.email, {
-                //     s: '200',
-                //     r: 'pg',
-                //     d: 'mm'
-                // });
+                let avatar = gravatar.url(req.body.email, {
+                    s: '200',
+                    r: 'pg',
+                    d: 'mm'
+                });
                 const newUser = new User({
                     name: req.body.name,
                     email: req.body.email,
-                    //avatar,
+                    avatar,
                     password: req.body.password,
                     identity: req.body.identity
                 })
@@ -90,10 +90,11 @@ router.post("/login", (req, res) => {
                         id: user.id,
                         name: user.name,
                         email: user.email,
+                        avatar: user.avatar,
                         identity: user.identity
                     };
                     jwt.sign(rule, keys.secretOrKey, {
-                        expiresIn: 3600
+                        expiresIn: 3600*12
                     }, (err, token) => {
                         if (err) throw err;
                         res.json({
@@ -123,4 +124,17 @@ router.get("/current", passport.authenticate("jwt", {
     })
 })
 
+// $route GET api/users/
+// @desc  return current user  验证token
+// @access private
+router.get("/", passport.authenticate("jwt", {
+    session: false
+}), (req, res) => {
+    User.find().then(user => {
+        if (!user) {
+            return res.status(404).json("没有任何内容")
+        }
+        res.json(user);
+    }).catch(err => res.status(404).json(err));
+})
 module.exports = router;
