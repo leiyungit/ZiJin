@@ -1,7 +1,7 @@
 <template>
   <div class="userlist">
     <template>
-      <el-table :data="tableData" style="width: 100%">
+      <el-table :data="tableData" style="width: 100%" border>
         <el-table-column prop="name" label="姓名" width="120"></el-table-column>
         <el-table-column prop="email" label="邮箱" width="200"></el-table-column>
         <el-table-column prop="identity" label="账户类型" width="120"></el-table-column>
