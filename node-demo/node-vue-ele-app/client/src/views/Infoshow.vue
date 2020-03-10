@@ -14,7 +14,7 @@
                 </div>
                 <div class="user-item">
                     <i class="fa fa-cog"></i>
-                    <span>{{user.identity=="admin"?"管理员":"普通员工"}}</span>
+                    <span>{{user.identity=="admin" || user.identity == 'manage'?"管理员":"普通员工"}}</span>
                 </div>
             </div>
       </el-col>

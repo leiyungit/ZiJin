@@ -17,7 +17,7 @@
           type="primary" 
           size="small" 
           icon="view" 
-          v-if="user.identity == 'admin'"
+          v-if="user.identity == 'admin' || user.identity == 'manage'"
           @click="handleAdd">添加</el-button>
         </el-form-item>
       </el-form>
@@ -50,7 +50,7 @@
           </template>
         </el-table-column>
         <el-table-column prop="remark" label="备注" width="200" align="center"></el-table-column>
-        <el-table-column prop="operation" align="center" fixed="right" width="180" label="操作" v-if="user.identity == 'admin'">
+        <el-table-column prop="operation" align="center" fixed="right" width="180" label="操作" v-if="user.identity == 'admin' || user.identity == 'manage'">
           <template slot-scope="scope">
             <el-button
               size="small"
