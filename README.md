@@ -2,7 +2,8 @@
 vue+mongodb后台管理
 
 npm init     -- 项目初始化
-cnpm i gravatar
+cnpm i gravatar   -- 全球公认头像，注册用
+
 ----------------------------以下命令不需执行，为开发时的备注-------------------------------------
 npm install express
 npm install mongoose    
