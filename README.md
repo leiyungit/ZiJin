@@ -7,6 +7,7 @@ cnpm install gravatar   -- 全球公认头像，注册用
 cd client ==> cnpm install jwt-decode 
 
 ----------------------------以下命令不需执行，为开发时的备注-------------------------------------------------------------------
+npm init     -- 项目初始化
 npm install express
 npm install mongoose    
 npm install body-parser
