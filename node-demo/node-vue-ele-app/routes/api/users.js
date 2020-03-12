@@ -137,4 +137,16 @@ router.get("/", passport.authenticate("jwt", {
         res.json(user);
     }).catch(err => res.status(404).json(err));
 })
+
+// $route GET api/users/test2
+// @desc  return current user  验证token
+// @access private
+router.get("/test2",  (req, res) => {
+    User.find().then(user => {
+        if (!user) {
+            return res.status(404).json("没有任何内容")
+        }
+        res.json(user);
+    }).catch(err => res.status(404).json(err));
+})
 module.exports = router;

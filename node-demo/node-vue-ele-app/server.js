@@ -33,7 +33,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.get("/",(req,res)=>{
-     res.send("hello world d");
+     res.send("这是一个api接口！");
 })
 
 // 使用routes
