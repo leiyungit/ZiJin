@@ -5,9 +5,11 @@ cnpm i
 ## server 将多个终端启动的项目绑定到一块，连载
 cnpm install concurrently   
 ## server 全球公认头像，注册用
-cnpm install gravatar   -- 
+cnpm install gravatar   
 ## client  cnpm i 
 cd client ==> cnpm install jwt-decode 
+## 拷贝项目不是CentOS曾出现 nodemon 未安装问题
+cnpm install nodemon
 
 ----------------------------以下命令不需执行，为开发时的备注-------------------------------------------------------------------
 npm init     -- 项目初始化
